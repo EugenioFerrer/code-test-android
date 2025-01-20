@@ -1,7 +1,7 @@
 package com.fueled.technicalchallenge.di
 
 import com.fueled.technicalchallenge.data.ApiConstants
-import com.fueled.technicalchallenge.data.CharactersApi
+import com.fueled.technicalchallenge.data.network.service.CharactersApi
 import com.fueled.technicalchallenge.data.UnWrapperFactory
 import com.fueled.technicalchallenge.presentation.character_list.CharacterListViewModel
 import com.squareup.moshi.Moshi

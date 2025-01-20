@@ -1,6 +1,6 @@
 package com.fueled.technicalchallenge.presentation.character_list
 
-import com.fueled.technicalchallenge.data.CharactersApi
+import com.fueled.technicalchallenge.data.network.service.CharactersApi
 import com.fueled.technicalchallenge.data.model.CharacterApiModel
 import com.fueled.technicalchallenge.data.model.PageApiModel
 import io.mockk.coEvery

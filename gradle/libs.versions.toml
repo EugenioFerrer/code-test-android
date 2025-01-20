@@ -25,6 +25,7 @@ moshi = "1.15.1"
 
 mockk = "1.13.13"
 coroutines = "1.9.0"
+koin-bom = "3.6.0-wasm-alpha2"
 
 
 [libraries]
@@ -65,6 +66,12 @@ coil-image-loading = { group = "io.coil-kt", name = "coil-compose", version.ref 
 #// Retrofit - A type-safe HTTP client for Android and Java
 moshi-core = { group = "com.squareup.moshi", name = "moshi", version.ref = "moshi" }
 moshi-codegen = { group = "com.squareup.moshi", name = "moshi-kotlin-codegen", version.ref = "moshi" }
+
+#// Koin
+koin-bom = { module = "io.insert-koin:koin-bom", version.ref = "koin-bom" }
+koin-android = { module = "io.insert-koin:koin-android" }
+koin-androidx-navigation = { module = "io.insert-koin:koin-androidx-navigation" }
+koin-androidx-compose = { module = "io.insert-koin:koin-androidx-compose" }
 
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofitVersion" }
 #// Square’s great HTTP client for the JVM, Android, and GraalVM.

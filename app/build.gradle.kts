@@ -68,6 +68,12 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
 
+    //Koin
+    implementation(platform(libs.koin.bom))
+    implementation(libs.koin.android)
+    implementation(libs.koin.androidx.navigation)
+    implementation(libs.koin.androidx.compose)
+
 
     testImplementation(libs.junit)
     testImplementation(libs.mockk)

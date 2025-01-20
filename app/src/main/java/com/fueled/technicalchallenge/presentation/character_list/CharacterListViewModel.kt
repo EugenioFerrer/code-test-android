@@ -3,7 +3,7 @@ package com.fueled.technicalchallenge.presentation.character_list
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.fueled.technicalchallenge.data.ApiUtils
-import com.fueled.technicalchallenge.data.CharactersApi
+import com.fueled.technicalchallenge.data.network.service.CharactersApi
 import com.fueled.technicalchallenge.data.model.CharacterApiModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
