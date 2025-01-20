@@ -8,7 +8,7 @@ import androidx.compose.material3.Surface
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.fueled.technicalchallenge.presentation.character_list.CharacterListScreen
+import com.fueled.technicalchallenge.presentation.screens.CharacterListScreen
 import com.fueled.technicalchallenge.presentation.ui.theme.TechnicalChallengeTheme
 
 class MainActivity : ComponentActivity() {

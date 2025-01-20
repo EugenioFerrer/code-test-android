@@ -68,17 +68,21 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
 
-    //Koin
+    // Koin
     implementation(platform(libs.koin.bom))
     implementation(libs.koin.android)
     implementation(libs.koin.androidx.navigation)
     implementation(libs.koin.androidx.compose)
-    //Kotlin Serialization Converter
+    // Kotlin Serialization Converter
     implementation(libs.retrofit2.kotlinx.serialization.converter)
     // RoomDB
     implementation(libs.androidx.room.runtime)
     ksp(libs.androidx.room.compiler)
     implementation(libs.androidx.room.ktx)
+    // List-Detail Layout
+    implementation(libs.androidx.adaptive)
+    implementation(libs.androidx.adaptive.layout)
+    implementation(libs.androidx.adaptive.navigation)
 
 
     testImplementation(libs.junit)

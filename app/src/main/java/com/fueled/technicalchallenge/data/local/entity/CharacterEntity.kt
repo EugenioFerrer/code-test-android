@@ -8,4 +8,5 @@ data class CharacterEntity(
     @PrimaryKey val id: String,
     val name: String,
     val description: String,
+    val defaultImageUrl: String
 )

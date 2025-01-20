@@ -1,12 +1,13 @@
-package com.fueled.technicalchallenge.data.model
+package com.fueled.technicalchallenge.data.network.model
 
 import com.fueled.technicalchallenge.domain.model.ImageVariant
 import com.squareup.moshi.JsonClass
+import kotlinx.serialization.Serializable
 
 /**
  * Created by bhavya@fueled.com on 17/10/2024.
  */
-@JsonClass(generateAdapter = true)
+@Serializable
 data class CharacterApiModel(
     val id: Long,
     val name: String,

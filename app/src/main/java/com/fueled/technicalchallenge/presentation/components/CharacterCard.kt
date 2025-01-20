@@ -1,4 +1,4 @@
-package com.fueled.technicalchallenge.presentation.character_list.components
+package com.fueled.technicalchallenge.presentation.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -18,12 +18,13 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberAsyncImagePainter
-import com.fueled.technicalchallenge.data.model.CharacterApiModel
+import com.fueled.technicalchallenge.data.network.model.CharacterApiModel
+import com.fueled.technicalchallenge.domain.model.CharacterDomain
 
 @Composable
 internal fun CharacterCard(
     modifier: Modifier = Modifier,
-    data: CharacterApiModel,
+    data: CharacterDomain,
 ) {
     Card(
         modifier = modifier

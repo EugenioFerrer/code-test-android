@@ -1,6 +1,6 @@
 package com.fueled.technicalchallenge.data
 
-import com.fueled.technicalchallenge.data.model.ResponseApiModel
+import com.fueled.technicalchallenge.data.network.model.ResponseApiModel
 import okhttp3.ResponseBody
 import retrofit2.Converter
 
