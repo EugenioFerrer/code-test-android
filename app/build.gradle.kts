@@ -73,6 +73,12 @@ dependencies {
     implementation(libs.koin.android)
     implementation(libs.koin.androidx.navigation)
     implementation(libs.koin.androidx.compose)
+    //Kotlin Serialization Converter
+    implementation(libs.retrofit2.kotlinx.serialization.converter)
+    // RoomDB
+    implementation(libs.androidx.room.runtime)
+    ksp(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.ktx)
 
 
     testImplementation(libs.junit)
