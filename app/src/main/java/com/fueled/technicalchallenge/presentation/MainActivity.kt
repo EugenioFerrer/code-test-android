@@ -17,17 +17,18 @@ class MainActivity : ComponentActivity() {
         setContent {
             TechnicalChallengeTheme {
                 Surface(color = MaterialTheme.colorScheme.background) {
-                    val navController = rememberNavController()
-                    NavHost(
-                        navController = navController,
-                        startDestination = Screen.CharacterListScreen.route
-                    ) {
-                        composable(
-                            route = Screen.CharacterListScreen.route
-                        ) {
-                            CharacterListScreen()
-                        }
-                    }
+//                    val navController = rememberNavController()
+//                    NavHost(
+//                        navController = navController,
+//                        startDestination = Screen.CharacterListScreen.route
+//                    ) {
+//                        composable(
+//                            route = Screen.CharacterListScreen.route
+//                        ) {
+//                            CharacterListScreen()
+//                        }
+//                    }
+                    App()
                 }
             }
         }

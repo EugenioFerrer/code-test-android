@@ -25,6 +25,7 @@ import com.fueled.technicalchallenge.domain.model.CharacterDomain
 internal fun CharacterCard(
     modifier: Modifier = Modifier,
     data: CharacterDomain,
+    onCharacterClicked: (CharacterDomain) -> Unit
 ) {
     Card(
         modifier = modifier
@@ -32,6 +33,7 @@ internal fun CharacterCard(
             .fillMaxWidth(fraction = 0.5F)
             .aspectRatio(1F, false),
         shape = RoundedCornerShape(8.dp),
+        onClick = {onCharacterClicked(data)}
     ) {
         Box(
             modifier = Modifier

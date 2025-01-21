@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.android.ksp)
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.compose.compiler)
+    id("kotlin-parcelize")
 }
 
 android {

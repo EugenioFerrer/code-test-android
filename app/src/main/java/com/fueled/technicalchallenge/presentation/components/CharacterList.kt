@@ -8,7 +8,9 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Icon
@@ -65,10 +67,12 @@ fun CharacterList(
 
         // Character List
         LazyVerticalGrid(
-            columns = GridCells.Fixed(2)
+            columns = GridCells.Fixed(2),
         ) {
             items(characterListState.characters ?: emptyList()){ characterDomain->
-                CharacterCard(data = characterDomain)
+                CharacterCard(
+                    data = characterDomain,
+                    onCharacterClicked = onCharacterClicked)
             }
 
         }
