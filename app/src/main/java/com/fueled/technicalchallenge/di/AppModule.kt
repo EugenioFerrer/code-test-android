@@ -1,6 +1,7 @@
 package com.fueled.technicalchallenge.di
 
 import com.fueled.technicalchallenge.data.ApiConstants
+import com.fueled.technicalchallenge.data.UnWrapperFactory
 import com.fueled.technicalchallenge.data.local.MarvelDatabase
 import com.fueled.technicalchallenge.data.local.dao.CharacterDao
 import com.fueled.technicalchallenge.data.network.service.CharactersApi
@@ -36,6 +37,7 @@ val appModule = module {
         val contentType = "application/json".toMediaType()
 
         Retrofit.Builder().baseUrl(ApiConstants.BASE_URL).client(get())
+            .addConverterFactory(UnWrapperFactory)
             .addConverterFactory(get<Json>().asConverterFactory(contentType)).build()
     }
 

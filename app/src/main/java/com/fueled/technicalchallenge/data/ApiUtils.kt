@@ -18,7 +18,8 @@ object ApiUtils {
     }
 
     private fun md5(input: String): String {
-        val bytes = MessageDigest.getInstance("MD5").digest(input.toByteArray(StandardCharsets.UTF_8))
+        val bytes =
+            MessageDigest.getInstance("MD5").digest(input.toByteArray(StandardCharsets.UTF_8))
         return bytes.joinToString("") { "%02x".format(it) }
     }
 }

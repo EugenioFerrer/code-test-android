@@ -4,4 +4,4 @@ import com.squareup.moshi.JsonClass
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class ResourceApiModel(val resourceURI: String, val name: String, val type: String?)
+data class ResourceApiModel(val resourceURI: String, val name: String, val type: String? = null)

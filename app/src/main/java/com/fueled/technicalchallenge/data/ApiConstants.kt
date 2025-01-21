@@ -6,6 +6,6 @@ package com.fueled.technicalchallenge.data
 object ApiConstants {
 
     const val BASE_URL = "https://gateway.marvel.com/v1/public/"
-    const val PRIVATE_KEY = "56d849c34c1d3cb33b2e72e671b0c630bf44f9ce" // TODO remove keys
-    const val PUBLIC_KEY = "d7129e1c18f76c72ba0a76adfe118758" // TODO remove keys
+    const val PRIVATE_KEY = "ccf60d376957d48571a8830ab87a9d29fb436296" // TODO remove keys
+    const val PUBLIC_KEY = "b07f7650f4040d3206ed1e8c7d9d65d4" // TODO remove keys
 }
