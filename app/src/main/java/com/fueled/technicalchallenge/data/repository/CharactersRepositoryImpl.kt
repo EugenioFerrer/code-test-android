@@ -1,6 +1,5 @@
 package com.fueled.technicalchallenge.data.repository
 
-import android.util.Log
 import com.fueled.technicalchallenge.data.ApiUtils
 import com.fueled.technicalchallenge.data.local.dao.CharacterDao
 import com.fueled.technicalchallenge.data.mapper.toCharacterDomain

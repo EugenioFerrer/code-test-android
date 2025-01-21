@@ -66,5 +66,4 @@ val appModule = module {
     }
 
     viewModelOf(::CharacterListViewModel)
-
 }

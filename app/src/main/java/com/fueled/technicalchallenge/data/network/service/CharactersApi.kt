@@ -15,7 +15,6 @@ interface CharactersApi {
         @Query("ts") ts: String,
         @Query("hash") hash: String,
         @Query("apikey") apiKey: String = PUBLIC_KEY,
-        @Query("nameStartsWith") heroNameQuery: String?,
+        @Query("nameStartsWith") heroNameQuery: String?
     ): PageApiModel<CharacterApiModel>
-
 }

@@ -9,4 +9,4 @@ data class CharacterPresentation(
     val id: String,
     val name: String,
     val defaultImageUrl: String
-): Parcelable
+) : Parcelable

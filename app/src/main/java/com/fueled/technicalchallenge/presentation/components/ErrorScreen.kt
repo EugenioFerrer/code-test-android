@@ -29,9 +29,8 @@ import androidx.compose.ui.unit.sp
 @Composable
 fun ErrorScreen(
     modifier: Modifier = Modifier,
-    errorMessage: String,
+    errorMessage: String
 ) {
-
     Box(
         modifier = modifier.fillMaxSize()
     ) {
@@ -52,9 +51,11 @@ fun ErrorScreen(
             )
 
             Text(
-                text = errorMessage, color = Color.Red, style = TextStyle(
+                text = errorMessage, color = Color.Red,
+                style = TextStyle(
                     fontSize = 20.sp, fontWeight = FontWeight.Bold, letterSpacing = 1.2.sp
-                ), textAlign = TextAlign.Center
+                ),
+                textAlign = TextAlign.Center
             )
 
             Spacer(modifier = modifier.height(24.dp))
@@ -73,5 +74,4 @@ fun ErrorScreen(
             }
         }
     }
-
 }

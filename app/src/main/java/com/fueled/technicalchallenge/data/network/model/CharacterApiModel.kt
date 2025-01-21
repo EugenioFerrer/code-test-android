@@ -1,7 +1,6 @@
 package com.fueled.technicalchallenge.data.network.model
 
 import com.fueled.technicalchallenge.domain.model.ImageVariant
-import com.squareup.moshi.JsonClass
 import kotlinx.serialization.Serializable
 
 /**
@@ -15,10 +14,11 @@ data class CharacterApiModel(
     val thumbnail: ImageApiModel,
     val resourceURI: String,
     val events: ResourceItemsApiModel,
-    val urls: List<UrlApiModel>,
-){
-    val defaultImageUrl = "${thumbnail.path}/${ImageVariant.PORTRAIT_INCREDIBLE.pathValue}.${thumbnail.extension}"
-        .formatUrl()
+    val urls: List<UrlApiModel>
+) {
+    val defaultImageUrl =
+        "${thumbnail.path}/${ImageVariant.PORTRAIT_INCREDIBLE.pathValue}.${thumbnail.extension}"
+            .formatUrl()
 }
 
 private fun String.formatUrl(): String {

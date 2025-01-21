@@ -14,7 +14,7 @@ object UnWrapperFactory : Converter.Factory() {
     override fun responseBodyConverter(
         type: Type,
         annotations: Array<Annotation>,
-        retrofit: Retrofit,
+        retrofit: Retrofit
     ): Converter<ResponseBody, *> {
         val envelopedType = Types.newParameterizedType(ResponseApiModel::class.java, type)
         val delegate: Converter<ResponseBody, ResponseApiModel<Any>>? =

@@ -30,8 +30,8 @@ class CharacterListViewModel(
                 isLoading = true, characters = null, error = null
             )
 
-            charactersRepository.getCharacters().collect{ result->
-                when(result){
+            charactersRepository.getCharacters().collect { result ->
+                when (result) {
                     is NetworkResult.ClientError -> {
                         updateErrorMessage("Unable to get Character List! Please Try Again.")
                     }
@@ -50,7 +50,6 @@ class CharacterListViewModel(
                     }
                 }
             }
-
         }
     }
 
@@ -75,5 +74,4 @@ class CharacterListViewModel(
             isLoading = false, error = null, characters = filteredCharacterList
         )
     }
-
 }

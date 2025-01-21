@@ -10,7 +10,7 @@ import androidx.compose.ui.unit.sp
 val Typography = Typography(
     displayLarge = TextStyle(
         fontWeight = FontWeight.Bold,
-        fontSize = 30.sp,
+        fontSize = 30.sp
     ),
     headlineMedium = TextStyle(
         fontWeight = FontWeight.SemiBold,

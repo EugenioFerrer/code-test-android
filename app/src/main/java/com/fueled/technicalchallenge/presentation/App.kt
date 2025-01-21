@@ -12,11 +12,12 @@ import org.koin.androidx.compose.koinViewModel
 @Composable
 fun App(
     characterListViewModel: CharacterListViewModel = koinViewModel()
-){
-    val characterListState by characterListViewModel.characterListState.collectAsStateWithLifecycle()
+) {
+    val characterListState by
+    characterListViewModel.characterListState.collectAsStateWithLifecycle()
 
-    when{
-        characterListState.isLoading ->{
+    when {
+        characterListState.isLoading -> {
             Loading()
         }
 

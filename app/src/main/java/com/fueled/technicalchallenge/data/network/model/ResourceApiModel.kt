@@ -1,6 +1,5 @@
 package com.fueled.technicalchallenge.data.network.model
 
-import com.squareup.moshi.JsonClass
 import kotlinx.serialization.Serializable
 
 @Serializable

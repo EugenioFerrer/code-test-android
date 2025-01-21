@@ -18,7 +18,6 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberAsyncImagePainter
-import com.fueled.technicalchallenge.data.network.model.CharacterApiModel
 import com.fueled.technicalchallenge.domain.model.CharacterDomain
 
 @Composable
@@ -33,35 +32,36 @@ internal fun CharacterCard(
             .fillMaxWidth(fraction = 0.5F)
             .aspectRatio(1F, false),
         shape = RoundedCornerShape(8.dp),
-        onClick = {onCharacterClicked(data)}
+        onClick = { onCharacterClicked(data) }
     ) {
         Box(
             modifier = Modifier
                 .fillMaxSize()
                 .background(MaterialTheme.colorScheme.background),
-            contentAlignment = Alignment.BottomStart,
+            contentAlignment = Alignment.BottomStart
         ) {
             Image(
                 modifier = Modifier.fillMaxSize(),
                 painter = rememberAsyncImagePainter(data.defaultImageUrl),
                 contentDescription = "Character Image",
                 alignment = Alignment.Center,
-                contentScale = ContentScale.Crop,
+                contentScale = ContentScale.Crop
             )
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
                     .clip(RoundedCornerShape(bottomEnd = 8.dp))
-                    .background(MaterialTheme.colorScheme.primary),
+                    .background(MaterialTheme.colorScheme.primary)
             ) {
                 Text(
-                    style = MaterialTheme.typography.bodyMedium.copy(color = MaterialTheme.colorScheme.onPrimary),
+                    style = MaterialTheme.typography
+                        .bodyMedium.copy(color = MaterialTheme.colorScheme.onPrimary),
                     modifier = Modifier.padding(
                         vertical = 4.dp,
-                        horizontal = 8.dp,
+                        horizontal = 8.dp
                     ),
                     text = data.name,
-                    maxLines = 1,
+                    maxLines = 1
                 )
             }
         }

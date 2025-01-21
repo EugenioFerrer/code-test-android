@@ -7,7 +7,6 @@ import androidx.compose.material3.adaptive.layout.ListDetailPaneScaffold
 import androidx.compose.material3.adaptive.layout.ListDetailPaneScaffoldRole
 import androidx.compose.material3.adaptive.navigation.rememberListDetailPaneScaffoldNavigator
 import androidx.compose.runtime.Composable
-import com.fueled.technicalchallenge.domain.model.CharacterDomain
 import com.fueled.technicalchallenge.presentation.components.CharacterDetails
 import com.fueled.technicalchallenge.presentation.components.CharacterList
 import com.fueled.technicalchallenge.presentation.mapper.toCharacterPresentation
@@ -16,14 +15,14 @@ import com.fueled.technicalchallenge.presentation.model.CharacterPresentation
 @OptIn(ExperimentalMaterial3AdaptiveApi::class)
 @Composable
 internal fun CharacterListScreen() {
-
     val navigator = rememberListDetailPaneScaffoldNavigator<CharacterPresentation>()
 
     BackHandler(navigator.canNavigateBack()) {
         navigator.navigateBack()
     }
 
-    ListDetailPaneScaffold(directive = navigator.scaffoldDirective,
+    ListDetailPaneScaffold(
+        directive = navigator.scaffoldDirective,
         value = navigator.scaffoldValue,
         listPane = {
             AnimatedPane {
@@ -40,7 +39,8 @@ internal fun CharacterListScreen() {
                     CharacterDetails(characterPresentation)
                 }
             }
-        })
+        }
+    )
 }
 
 //    Box(modifier = Modifier.fillMaxSize()) {
@@ -70,4 +70,3 @@ internal fun CharacterListScreen() {
 //            }
 //        }
 //    }
-

@@ -85,7 +85,6 @@ dependencies {
     implementation(libs.androidx.adaptive.layout)
     implementation(libs.androidx.adaptive.navigation)
 
-
     testImplementation(libs.junit)
     testImplementation(libs.mockk)
     testImplementation(libs.coroutines.test)
@@ -101,6 +100,6 @@ dependencies {
     implementation(libs.retrofit.moshi.converter)
     implementation(libs.moshi.core)
     ksp(libs.moshi.codegen)
-    implementation(libs.okhttp3.logging )
+    implementation(libs.okhttp3.logging)
     implementation(libs.accompanist.flowlayout)
 }
