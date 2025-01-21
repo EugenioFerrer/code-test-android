@@ -52,7 +52,6 @@ class CharacterListViewModelTest {
 
     @Test
     fun `getCharacters() update state with list data after success response`() = runTest {
-
         characterListViewModel.getCharacters()
 
         characterListViewModel.characterListState.test {
@@ -64,7 +63,6 @@ class CharacterListViewModelTest {
     @Test
     fun `getCharacters() update state with null error message after client error response`() =
         runTest {
-
             characterListViewModel.getCharacters()
 
             characterListViewModel.characterListState.test {
