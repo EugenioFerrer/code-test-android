@@ -4,6 +4,8 @@ plugins {
     alias(libs.plugins.android.ksp)
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.compose.compiler)
+    id("kotlin-parcelize")
+    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
 }
 
 android {
@@ -41,6 +43,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
@@ -68,10 +71,31 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
 
+    // Koin
+    implementation(platform(libs.koin.bom))
+    implementation(libs.koin.android)
+    implementation(libs.koin.androidx.navigation)
+    implementation(libs.koin.androidx.compose)
+    // Kotlin Serialization Converter
+    implementation(libs.retrofit2.kotlinx.serialization.converter)
+    // RoomDB
+    implementation(libs.androidx.room.runtime)
+    ksp(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.ktx)
+    // List-Detail Layout
+    implementation(libs.androidx.adaptive)
+    implementation(libs.androidx.adaptive.layout)
+    implementation(libs.androidx.adaptive.navigation)
 
     testImplementation(libs.junit)
     testImplementation(libs.mockk)
     testImplementation(libs.coroutines.test)
+    testImplementation(libs.androidx.core.testing)
+    // Turbine
+    testImplementation(libs.turbine)
+    // Instantiator
+    testImplementation(libs.instantiator)
+
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
@@ -84,6 +108,13 @@ dependencies {
     implementation(libs.retrofit.moshi.converter)
     implementation(libs.moshi.core)
     ksp(libs.moshi.codegen)
-    implementation(libs.okhttp3.logging )
+    implementation(libs.okhttp3.logging)
     implementation(libs.accompanist.flowlayout)
+}
+
+secrets {
+    defaultPropertiesFileName = "local.defaults.properties"
+
+    ignoreList.add("keyToIgnore")
+    ignoreList.add("sdk.*")
 }

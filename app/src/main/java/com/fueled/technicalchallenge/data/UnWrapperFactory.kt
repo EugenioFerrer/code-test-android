@@ -1,6 +1,6 @@
 package com.fueled.technicalchallenge.data
 
-import com.fueled.technicalchallenge.data.model.ResponseApiModel
+import com.fueled.technicalchallenge.data.network.model.ResponseApiModel
 import com.squareup.moshi.Types
 import okhttp3.ResponseBody
 import retrofit2.Converter
@@ -14,7 +14,7 @@ object UnWrapperFactory : Converter.Factory() {
     override fun responseBodyConverter(
         type: Type,
         annotations: Array<Annotation>,
-        retrofit: Retrofit,
+        retrofit: Retrofit
     ): Converter<ResponseBody, *> {
         val envelopedType = Types.newParameterizedType(ResponseApiModel::class.java, type)
         val delegate: Converter<ResponseBody, ResponseApiModel<Any>>? =
