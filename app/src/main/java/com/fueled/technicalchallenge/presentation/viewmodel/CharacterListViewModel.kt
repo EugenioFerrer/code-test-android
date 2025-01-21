@@ -1,6 +1,5 @@
 package com.fueled.technicalchallenge.presentation.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.fueled.technicalchallenge.domain.repository.CharactersRepository
@@ -24,7 +23,7 @@ class CharacterListViewModel(
         getCharacters()
     }
 
-    private fun getCharacters() {
+    fun getCharacters() {
         viewModelScope.launch {
             _characterListState.value = CharacterListState(
                 isLoading = true, characters = null, error = null
@@ -43,7 +42,6 @@ class CharacterListViewModel(
                     }
 
                     is NetworkResult.Success -> {
-                        Log.e("Result", result.data.toString())
                         _characterListState.value = CharacterListState(
                             isLoading = false, characters = result.data, error = null
                         )

@@ -88,6 +88,7 @@ dependencies {
     testImplementation(libs.junit)
     testImplementation(libs.mockk)
     testImplementation(libs.coroutines.test)
+    testImplementation(libs.androidx.core.testing)
     // Turbine
     testImplementation(libs.turbine)
     // Instantiator
