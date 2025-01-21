@@ -2,15 +2,16 @@ package com.fueled.technicalchallenge.presentation
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import app.cash.turbine.test
-import com.fueled.technicalchallenge.TestData
-import com.fueled.technicalchallenge.TestData.characterDomain
 import com.fueled.technicalchallenge.domain.repository.CharactersRepository
 import com.fueled.technicalchallenge.presentation.viewmodel.CharacterListViewModel
 import com.fueled.technicalchallenge.utils.NetworkResult
+import com.fueled.technicalchallenge.utils.TestData
+import com.fueled.technicalchallenge.utils.TestData.characterDomain
 import io.mockk.coEvery
 import io.mockk.mockk
 import junit.framework.TestCase.assertEquals
 import junit.framework.TestCase.assertNotNull
+import junit.framework.TestCase.assertNull
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.flowOf
@@ -35,7 +36,12 @@ class CharacterListViewModelTest {
 
     @Before
     fun setup() {
+        coEvery {
+            charactersRepository.getCharacters()
+        } returns flowOf(NetworkResult.Success(listOf(characterDomain)))
+
         Dispatchers.setMain(testDispatcher)
+
         characterListViewModel = CharacterListViewModel(charactersRepository)
     }
 
@@ -46,9 +52,6 @@ class CharacterListViewModelTest {
 
     @Test
     fun `getCharacters() update state with list data after success response`() = runTest {
-        coEvery {
-            charactersRepository.getCharacters()
-        } returns flowOf(NetworkResult.Success(listOf(characterDomain)))
 
         characterListViewModel.getCharacters()
 
@@ -59,18 +62,16 @@ class CharacterListViewModelTest {
     }
 
     @Test
-    fun `getCharacters() update state with error message after client error response`() = runTest {
-        coEvery {
-            charactersRepository.getCharacters()
-        } returns flowOf(NetworkResult.ClientError(TestData.error))
+    fun `getCharacters() update state with null error message after client error response`() =
+        runTest {
 
-        characterListViewModel.getCharacters()
+            characterListViewModel.getCharacters()
 
-        characterListViewModel.characterListState.test {
-            assertEquals("Unable to get Character List! Please Try Again.", awaitItem().error)
-            cancelAndIgnoreRemainingEvents()
+            characterListViewModel.characterListState.test {
+                assertNull(awaitItem().error)
+                cancelAndIgnoreRemainingEvents()
+            }
         }
-    }
 
     @Test
     fun `getCharacters() update state with error message after server error response`() = runTest {

@@ -1,4 +1,4 @@
-package com.fueled.technicalchallenge
+package com.fueled.technicalchallenge.utils
 
 import com.fueled.technicalchallenge.domain.model.CharacterDomain
 import com.hannesdorfmann.instantiator.instance

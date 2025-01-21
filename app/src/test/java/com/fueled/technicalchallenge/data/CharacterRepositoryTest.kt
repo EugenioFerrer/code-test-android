@@ -1,8 +1,8 @@
 package com.fueled.technicalchallenge.data
 
 import app.cash.turbine.test
-import com.fueled.technicalchallenge.TestData.characterDomain
-import com.fueled.technicalchallenge.TestData.error
+import com.fueled.technicalchallenge.utils.TestData.characterDomain
+import com.fueled.technicalchallenge.utils.TestData.error
 import com.fueled.technicalchallenge.domain.repository.CharactersRepository
 import com.fueled.technicalchallenge.utils.NetworkResult
 import io.mockk.coEvery
