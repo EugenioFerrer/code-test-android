@@ -24,6 +24,8 @@ coroutines = "1.9.0"
 koin-bom = "3.6.0-wasm-alpha2"
 retrofit2KotlinxSerializationConverter = "1.0.0"
 room = "2.6.1"
+turbine = "1.2.0"
+instantiator = "1.0.0"
 
 
 
@@ -97,6 +99,12 @@ kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serializa
 
 mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
 coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutines" }
+
+#// Turbine
+turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
+
+#// Instantiator
+instantiator = { module = "com.hannesdorfmann.instantiator:instantiator", version.ref = "instantiator" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
